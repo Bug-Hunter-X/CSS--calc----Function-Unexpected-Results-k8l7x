@@ -1,0 +1,12 @@
+To fix this, ensure that units within the `calc()` function are compatible (e.g., all pixels, or all percentages).  Explicitly set dimensions for parent containers to avoid calculation issues when using percentages.  If mixing units is necessary, carefully check browser compatibility and consider fallback solutions. 
+Example:
+Instead of:
+```css
+.element { width: calc(100% - 10px); }
+```
+Use:
+```css
+.parent { width: 500px; }
+.element { width: calc(100% - 10px); }
+```
+Or ensure all units are the same.  Also, consider using `min()` and `max()` functions to handle different screen sizes to make your code more robust.
